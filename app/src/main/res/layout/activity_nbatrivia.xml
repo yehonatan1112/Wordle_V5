@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NBATrivia"
+    android:background="#FCF0F2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_background2" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:text="NBA"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/imageView3"
+                    app:layout_constraintVertical_bias="0.26999998" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trivia"
+                    android:textColor="#FEA9A7"
+                    android:textSize="50sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="@+id/textView4"
+                    app:layout_constraintVertical_bias="0.269" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_height="500dp"
+                android:background="@drawable/background_banner">
+
+                <EditText
+                    android:id="@+id/GuessState"
+                    android:textColor="@color/textColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="180dp"
+                    android:hint="Guess One Team"
+                    android:inputType="textPersonName"
+                    android:textSize="20dp"
+                    android:ellipsize="start"
+                    android:gravity="center_horizontal"
+                    tools:ignore="MissingConstraints" />
+                <ImageButton
+                    android:id="@+id/btnGuessState"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/v"
+                    android:scaleType="fitXY"
+                    android:textColor="@color/ButtonTextColor"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                <ImageButton
+                    android:id="@+id/btnGiveUpState"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/giveup"
+                    android:scaleType="fitXY"
+                    android:textColor="@color/ButtonTextColor"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+
+                <TextView
+                    android:id="@+id/numberofguesses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="casual"
+                    android:gravity="center"
+                    android:text="src"
+                    android:textColor="@color/textColor"
+                    android:textSize="70px"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/MainPhoto"
+                    android:layout_width="300dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/nbalogo"
+                    android:layout_height="300dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/OnePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/nets"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwoPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="77.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/celtics"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/ThreePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="127.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/nuggets"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/FourPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="177.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/warriors"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/FivePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="227.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/lakers"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/SixPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="277.5dp"
+                    android:layout_marginTop="150dp"
+                    android:src="@drawable/kings"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/SevenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/phili"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/EightPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="77.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/cavs"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <ImageView
+                    android:id="@+id/NinePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="127.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/bucks"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="177.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/knicks"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/ElevenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="227.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/heat"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwelvePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="277.5dp"
+                    android:layout_marginTop="210dp"
+                    android:src="@drawable/hawks"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/ThirteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/bulls"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/FourteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="77.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/pacers"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/FifteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="127.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/wizards"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/SixteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="177.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/magic"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/SeventeenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="227.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/pistons"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/EighteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="277.5dp"
+                    android:layout_marginTop="270dp"
+                    android:src="@drawable/hornets"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/NineteenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/suns"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="77.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/jazz"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyOnePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="127.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/pelicans"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyTwoPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="177.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/grizzlies"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyThreePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="227.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/spurs"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyFourPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="277.5dp"
+                    android:layout_marginTop="330dp"
+                    android:src="@drawable/rockets"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyFivePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="27.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/thunder"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentySixPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="77.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/mavericks"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentySevenPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="127.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/clippers"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyEightPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="177.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/timberwolves"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/TwentyNinePhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="227.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/trailblazers"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+                <ImageView
+                    android:id="@+id/ThirtyPhoto"
+                    android:layout_width="50dp"
+                    app:strokeWidth="2dp"
+                    app:strokeColor="@color/ButtonMainStroke"
+                    android:scaleType="fitXY"
+                    android:layout_marginLeft="277.5dp"
+                    android:layout_marginTop="390dp"
+                    android:src="@drawable/raptors"
+                    android:layout_height="60dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:menu="@menu/menu_logged_main"
+                android:background="#5E4386"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="49dp"
+                android:id="@+id/bottonnav"
+                >
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

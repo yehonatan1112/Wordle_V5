@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/action_Main"
+    android:title="Home Screen"
+        android:icon="@drawable/main"
+    />
+    <item
+        android:id="@+id/action_login"
+        android:title="Login"
+        android:icon="@drawable/login"
+        />
+    <item
+        android:id="@+id/action_SignUp"
+        android:title="Sign Up"
+        android:icon="@drawable/signup"
+        />
+    <item
+        android:id="@+id/action_Credits"
+        android:title="Credits"
+        android:icon="@drawable/credits"
+        />
+    </menu>
