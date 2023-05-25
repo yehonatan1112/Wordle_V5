@@ -69,6 +69,7 @@ public class WordGame extends AppCompatActivity {
         btn=findViewById(R.id.btnGuess);
         d=new Dialog(this);
         Answer.setText(CorrectWord);
+        //liron
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
