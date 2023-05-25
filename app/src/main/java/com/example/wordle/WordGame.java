@@ -50,7 +50,6 @@ public class WordGame extends AppCompatActivity {
     public Calendar calendar= Calendar.getInstance();
     public PendingIntent pendingIntent;
     public AlarmManager alarmManager;
-    TextView Answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +61,12 @@ public class WordGame extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         numberofGuesses=0;
-        Answer=findViewById(R.id.Correct);
         editText=findViewById(R.id.Guess);
         Word = new Words();
         String CorrectWord = Word.GetChosenWord();
         btn=findViewById(R.id.btnGuess);
         d=new Dialog(this);
-        Answer.setText(CorrectWord);
-        //liron
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
