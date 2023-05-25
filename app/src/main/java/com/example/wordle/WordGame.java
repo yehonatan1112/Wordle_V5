@@ -45,10 +45,12 @@ public class WordGame extends AppCompatActivity {
     private boolean isGoingToHomeScreen = false;
     Dialog d;
     public int numberofGuesses;
+
     Words Word;
     public Calendar calendar= Calendar.getInstance();
     public PendingIntent pendingIntent;
     public AlarmManager alarmManager;
+    TextView Answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,11 +62,13 @@ public class WordGame extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         numberofGuesses=0;
+        Answer=findViewById(R.id.Correct);
         editText=findViewById(R.id.Guess);
         Word = new Words();
         String CorrectWord = Word.GetChosenWord();
         btn=findViewById(R.id.btnGuess);
         d=new Dialog(this);
+        Answer.setText(CorrectWord);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,9 +81,8 @@ public class WordGame extends AppCompatActivity {
                         Toast.makeText(WordGame.this, "Only Existing Words", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        numberofGuesses++;
-                        if (numberofGuesses <= 6) {
-                            boardGame.onSubmitGuess(Guess, numberofGuesses - 1, CorrectWord.toLowerCase());
+                        boardGame.onSubmitGuess(Guess, numberofGuesses, CorrectWord.toLowerCase());
+                        if (numberofGuesses <=5) {
                             if (boardGame.isCorrect()||Guess.equals(CorrectWord.toLowerCase())) {
                                 Stats.wordle_number_of_wins++;
                                 Stats.wordle_tries+=numberofGuesses;
@@ -88,7 +91,13 @@ public class WordGame extends AppCompatActivity {
                                 Intent intent = new Intent(WordGame.this, Win.class);
                                 intent.putExtra("CorrectWord", CorrectWord);
                                 startActivity(intent);
+                            } else if (numberofGuesses==5) {
+                                isGoingToHomeScreen=true;
+                                Intent intent = new Intent(WordGame.this, Lose.class);
+                                intent.putExtra("CorrectWord", CorrectWord);
+                                startActivity(intent);
                             }
+                            numberofGuesses++;
                             editText.setText("");
                             closeKeyboard();
                         }

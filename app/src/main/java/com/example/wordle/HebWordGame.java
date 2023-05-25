@@ -71,24 +71,30 @@ public class HebWordGame extends AppCompatActivity {
                         Toast.makeText(HebWordGame.this, "Only 5 letters long", Toast.LENGTH_SHORT).show();
                         return;
                     } else {
-                        numberofGuesses++;
-                        if (numberofGuesses <= 6) {
-                            boardGame.onSubmitGuess(Guess, numberofGuesses-1, CorrectWord);
+                        boardGame.onSubmitGuess(Guess, numberofGuesses, CorrectWord.toLowerCase());
+                        if (numberofGuesses <=5) {
                             if (boardGame.isCorrect()||Guess.equals(CorrectWord.toLowerCase())) {
-                                Stats.hebwordle_number_of_wins++;
-                                Stats.hebwordle_tries+=numberofGuesses;
-                                Stats.hebwordle_avg_tries= Stats.hebwordle_tries/Stats.hebwordle_number_of_wins;
+                                Stats.wordle_number_of_wins++;
+                                Stats.wordle_tries+=numberofGuesses;
+                                Stats.wordle_avg_tries= Stats.wordle_tries/Stats.wordle_number_of_wins;
                                 isGoingToHomeScreen=true;
                                 Intent intent = new Intent(HebWordGame.this, Win.class);
-                                intent.putExtra("CorrectWord",CorrectWord);
+                                intent.putExtra("CorrectWord", CorrectWord);
+                                startActivity(intent);
+                            } else if (numberofGuesses==5) {
+                                isGoingToHomeScreen=true;
+                                Intent intent = new Intent(HebWordGame.this, Lose.class);
+                                intent.putExtra("CorrectWord", CorrectWord);
                                 startActivity(intent);
                             }
+                            numberofGuesses++;
                             editText.setText("");
                             closeKeyboard();
-                        } else {
+                        }
+                        else {
                             isGoingToHomeScreen=true;
                             Intent intent = new Intent(HebWordGame.this, Lose.class);
-                            intent.putExtra("CorrectWord",CorrectWord);
+                            intent.putExtra("CorrectWord", CorrectWord);
                             startActivity(intent);
                         }
                 }

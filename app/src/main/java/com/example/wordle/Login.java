@@ -141,6 +141,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void signIn() {
+        isGoingToHomeScreen=true;
         Intent signInIntent=gsc.getSignInIntent();
         startActivityForResult(signInIntent,1000);
     }

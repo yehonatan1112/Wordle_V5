@@ -70,7 +70,20 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginTop="0dp"
                 android:layout_height="wrap_content">
-
+                <TextView
+                    android:id="@+id/Correct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="50px"
+                    android:fontFamily="casual"
+                    android:layout_marginBottom="465dp"
+                    android:layout_marginLeft="50dp"
+                    android:textColor="@color/textColor"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
                 <EditText
                     android:id="@+id/Guess"
                     android:textColor="@color/textColor"

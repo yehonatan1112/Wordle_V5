@@ -288,12 +288,12 @@ public class Search extends AppCompatActivity {
         }
         if(first.equals("flagle"))
         {
-            firstbtn.setText("Wordle");
+            firstbtn.setText("flagle");
             firstbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     isGoingToHomeScreen=true;
-                    Intent intent = new Intent(Search.this,Modes.class);
+                    Intent intent = new Intent(Search.this,Flagle.class);
                     startActivity(intent);
                 }
             });
@@ -408,12 +408,12 @@ public class Search extends AppCompatActivity {
         }
         if(second.equals("flagle"))
         {
-            secondbtn.setText("Wordle");
+            secondbtn.setText("Flagle");
             secondbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     isGoingToHomeScreen=true;
-                    Intent intent = new Intent(Search.this,Modes.class);
+                    Intent intent = new Intent(Search.this,Flagle.class);
                     startActivity(intent);
                 }
             });
@@ -528,12 +528,12 @@ public class Search extends AppCompatActivity {
         }
         if(third.equals("flagle"))
         {
-            thirdbtn.setText("Wordle");
+            thirdbtn.setText("Flagle");
             thirdbtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     isGoingToHomeScreen=true;
-                    Intent intent = new Intent(Search.this,Modes.class);
+                    Intent intent = new Intent(Search.this,Flagle.class);
                     startActivity(intent);
                 }
             });
