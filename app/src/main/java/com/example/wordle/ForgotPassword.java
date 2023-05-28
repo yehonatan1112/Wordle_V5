@@ -56,7 +56,7 @@ public class ForgotPassword extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                password=dbHandler.ForgotPassword(Email.toLowerCase(),Name.toLowerCase());
+                password=dbHandler.checkPassword(Email.toLowerCase(),Name.toLowerCase());
                 passwordText.setText("Your Password is "+password);
                 closeKeyboard();
             }

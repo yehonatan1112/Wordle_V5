@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.Dictionary;
+
 public class DBHandler extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "Users";
@@ -23,7 +25,6 @@ public class DBHandler extends SQLiteOpenHelper {
 
 
     private static final String PASSWORD_COL = "password";
-
     public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -50,35 +51,35 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
     @SuppressLint("Range")
-    public String ForgotPassword(String email,String firstname)
-    {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String password="";
-        String selection = EMAIL_COL+" = ? AND "+FNAME_COL+" = ?";
-        String[] selectionArgs = {email,firstname};
-        String[] columns = {PASSWORD_COL};
-        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
-        if (cursor.moveToFirst()) {
-            password = cursor.getString(cursor.getColumnIndex(PASSWORD_COL));
-        }
-        cursor.close();
-        db.close();
-        return password;
-    }
-    public void deleteUser(String email,String password) {
+    public String checkPassword(String email, String name) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {"password"};
+        String selection = "email = ? AND firstname = ?";
+        String[] selectionArgs = {email, name};
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        String[] selections={email,password};
-        String where="email= ? AND password= ?";
-        db.delete(TABLE_NAME,where,selections);
-        db.close();
+        Cursor cursor = db.query(TABLE_NAME, projection, selection, selectionArgs, null, null, null);
+        String savedPassword = "";
+
+        if (cursor != null && cursor.moveToFirst()) {
+            savedPassword = cursor.getString(cursor.getColumnIndex("password"));
+            cursor.close();
+        }
+
+        return savedPassword;
+    }
+
+    public void deleteUser(String email, String password) {
+        SQLiteDatabase db = getWritableDatabase();
+        String whereClause = "email = ? OR password = ?";
+        String[] whereArgs = {email, password};
+
+        int rowsDeleted = db.delete(TABLE_NAME, whereClause, whereArgs);
     }
     public void updateUser( String originalUserPassword,String email, String password)  {
-
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(PASSWORD_COL, password);
-        db.update(TABLE_NAME,values,"password= ? AND email= ?",new String[]{password,email});
+        db.update(TABLE_NAME,values,"password= ? AND email= ?",new String[]{originalUserPassword,email});
         db.close();
     }
 
